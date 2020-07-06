@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="keywords" content="Hitalk,极简风,评论系统,极简风评论系统,comment system">
-    <meta name="description" content="ETalk - 一款基于Leancloud的极简风评论系统">
+    <meta name="description" content="ETalk - 一款基于Leancloud的极简风评论及说说系统">
     <link rel="icon" href="https://notebook.js.org/images/favicon.ico">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta content="telephone=no,email=no" name="format-detection">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,Chrome=1">
-    <title>ETalk - A simple comment system based on Leancloud.</title>
+    <title>ETalk - A simple comment and shuoshuo system based on Leancloud.</title>
+
     <style>
         * {
             margin: 0 auto;
@@ -41,7 +42,6 @@
             font-size: 24px;
             line-height: 60px;
             color: #4285f4;
-            vertical-align: base-line;
         }
 
         .sub {
@@ -85,6 +85,7 @@
             box-shadow: 0 0 4px 1px rgba(180, 176, 176, 0.12);
         }
 
+        /*评论交流区样式 start*/
         .comment {
             background: #fff;
             padding: 10px;
@@ -92,6 +93,8 @@
             margin-bottom: 15px;
             box-shadow: 0 0 4px 1px rgba(180, 176, 176, 0.12);
         }
+
+        /*评论交流区样式 end*/
 
         .prolist {
             padding: 10px 20px 20px 20px;
@@ -244,15 +247,16 @@
 <script>
     var HitalkConfig = {
       el: '#comment',
-      appId: "j5U5IGzSMQcvLyhW1Y6opNX6-gzGzoHsz",
-      appKey: "orYWc8ltQOxyT6Y9HEQdrizt",
+      appId: "KIlqXsCmzBUnovnvh5ih8mk9-gzGzoHsz",
+      appKey: "e0v6zIg2NGg44PM6MVLa7voo",
       avatar: 'monsterid',
       placeholder: "你是我一生只会遇见一次的惊喜 ...",
       path: '/',
     };
   </script>
-  <script src="https://wugenqiang.github.io/ETalk/src/js/av-min.js"></script>
-  <script src="https://wugenqiang.github.io/ETalk/src/js/vue.js"></script>
+  <!--Leancloud 操作库:-->
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://wugenqiang.github.io/ETalk/src/js/Hitalk-vue.min.js"></script>
 
 </body>
