@@ -55,7 +55,7 @@
         }
 
         .placeholder {
-            height: 56px;
+            height: 15px;
         }
 
         @media screen and (max-width:720px) {
@@ -72,13 +72,17 @@
                 width: 100%;
             }
 
-            .placeholder,
-            .market {
+            .placeholder{
                 display: none;
             }
         }
 
         .content {
+            background: #fff;
+            padding: 10px;
+        }
+
+        .comment {
             background: #fff;
             padding: 10px;
         }
@@ -101,12 +105,37 @@
             padding: 20px 0;
         }
 
-        .copy {
-            line-height: 60px;
+        .footer {
+            line-height: 30px;
             text-align: center;
             font-size: 14px;
+        }
+
+        .sitetime {
             color: #9c9c9c;
         }
+
+        .copy {
+            color: #9c9c9c;
+        }
+
+        /*捐款样式 start*/
+        .donate {
+            line-height: 30px;
+            text-align: center;
+            font-size: 16px;
+            color: #49aade;
+        }
+        /*捐款样式 end*/
+
+        /*滚动条样式 start*/
+        /* 滚动条宽度 */
+        ::-webkit-scrollbar{width:5px;}
+        /* 滚动条颜色 */
+        ::-webkit-scrollbar-thumb{background-color: #2196f3;}
+        /* 鼠标移动到滚动条上后显示的颜色 */
+        ::-webkit-scrollbar-thumb:hover {background-color: #e96900}
+
 
     </style>
 
@@ -132,7 +161,7 @@
                 var per=7;
                 var lazy=1;
                 var slanguage="zh";
-                var bgimg="https://cdn.jsdelivr.net/gh/drew233/cdn/20200409110727.webp";
+                var bgimg="https://gitee.com/wugenqiang/PictureBed/raw/master/NoteBook/20200706102421.webp";
                 var atemoji_array={
                     huaji: "https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_huaji.gif",
                     baiyan:"https://cdn.jsdelivr.net/gh/Artitalk/Artitalk-emoji/baiyan.png",
@@ -144,30 +173,66 @@
             <div id="artitalk_main"></div>
             <script type="text/javascript" src="https://unpkg.com/artitalk"></script>
         </div>
+        <div class="donate">
+            <p>我能想到最浪漫的事，就是我喝咖啡你付钱~😆😏</p>
+            <iframe src="https://wugenqiang.github.io/Sponsor/" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;"  frameborder="0" scrolling="no"></iframe>
+        </div>
     </div>
-</div>
-<div class="copy">
-    &copy; 2019 - 至今
-    <a href="https://github.com/wugenqiang" target="_blank">WuGenQiang</a>
-</div>
-<script>
-    var Hitalk = new Hitalk({
-        el: '.comment',
-        appId: 'Ir6SE0GwBzFxczMqXXVpCF8d-gzGzoHsz',
-        appKey: 'SnlgtrRYvxJimSYDRw2GBr6H',
-        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-        avatar: 'monsterid',
-        path: '/'
-    });
+    <div class="placeholder"></div>
 
-    window.onload = function() {
-        var iframes = document.querySelectorAll('iframe');
-        iframes[0].setAttribute('src',
-            'https://ghbtns.com/github-btn.html?user=ihoey&repo=Hitalk&type=watch&count=true');
-        iframes[1].setAttribute('src', 'https://ghbtns.com/github-btn.html?user=ihoey&type=follow&count=true');
+</div>
+
+<div class="footer">
+    <div class="sitetime">
+        <span id="sitetime"></span><br/>
+    </div>
+    <div class="copy">
+        &copy; 2019 - 至今 幸好有
+        <a href="https://github.com/wugenqiang" target="_blank">WuGenQiang</a>
+    </div>
+
+</div>
+
+
+<!-- 添加网站运行时间统计 -->
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2019, 06, 21, 22, 22, 22); //北京时间2019-06-21 22:22:22 //计划考研的日子，6月20日毕业典礼结束后，人生需要继续努力，加油，看到这句话的朋友们！
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = " 小破站已经苟活了 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分 " + diffSeconds + " 秒 ";
     }
-
+    siteTime();
 </script>
-</body>
 
+<!-- mouse click 出现爱心-->
+<script src="https://wugenqiang.gitee.io/notebook/plugin/click_heart.js"></script>
+
+</body>
 </html>
