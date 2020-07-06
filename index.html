@@ -85,6 +85,14 @@
             box-shadow: 0 0 4px 1px rgba(180, 176, 176, 0.12);
         }
 
+        .comment {
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 0 4px 1px rgba(180, 176, 176, 0.12);
+        }
+
         .prolist {
             padding: 10px 20px 20px 20px;
             font-weight: 400;
@@ -134,7 +142,6 @@
         /* 鼠标移动到滚动条上后显示的颜色 */
         ::-webkit-scrollbar-thumb:hover {background-color: #e96900}
 
-
     </style>
 
 </head>
@@ -174,6 +181,10 @@
         </div>
     </div>
     <div class="placeholder"></div>
+    <div class="comment">
+        <!-- 评论数量 -->
+      <div id="comment"></div>
+    </div>
 
 </div>
 
@@ -228,6 +239,21 @@
 
 <!-- mouse click 出现爱心-->
 <script src="https://wugenqiang.github.io/ETalk/src/js/click_heart.js"></script>
+
+<!-- Hitalk 评论系统 -->
+<script>
+    var HitalkConfig = {
+      el: '#comment',
+      appId: "j5U5IGzSMQcvLyhW1Y6opNX6-gzGzoHsz",
+      appKey: "orYWc8ltQOxyT6Y9HEQdrizt",
+      avatar: 'monsterid',
+      placeholder: "你是我一生只会遇见一次的惊喜 ...",
+      path: window.location.pathname,
+    };
+  </script>
+  <script src="https://wugenqiang.github.io/ETalk/src/js/av-min.js"></script>
+  <script src="https://wugenqiang.github.io/ETalk/src/js/vue.js"></script>
+  <script src="https://wugenqiang.github.io/ETalk/src/js/Hitalk-vue.min.js"></script>
 
 </body>
 </html>
