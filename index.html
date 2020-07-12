@@ -46,6 +46,14 @@
             color: #4285f4;
         }
 
+         .notebook {
+            display: inline-block;
+            height: 60px;
+            font-size: 18px;
+            line-height: 60px;
+            color: #4285f4;
+        }
+
         .sub {
             font-size: 12px;
             color: #9c9c9c;
@@ -157,6 +165,7 @@
     <div class="container">
         <a href="./" class="logo">ETalk</a>
         <span class="sub">A simple shuoshuo system based on Leancloud.</span>
+        <a href="https://notebook.js.org/" class="notebook" target="_blank">学习笔记入口</a>
     </div>
 </header>
 
@@ -176,10 +185,13 @@
                 var atemoji_array={
                     huaji: "https://gitee.com/wugenqiang/PictureBed/raw/master/NoteBook/20200706133916.gif",
                 }
+                var repo_pt_img="/wugenqiang/ETalk-img/";
+                var repo_pt_mp3="/wugenqiang/ETalk-mp3/";
+                var repo_pt_mp4="/wugenqiang/ETalk-mp4/";
             </script>
             <div id="artitalk_main"></div>
             <!--https://unpkg.com/artitalk-->
-            <script type="text/javascript" src="https://unpkg.com/artitalk"></script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/wugenqiang/ETalk@master/src/js/artitalk-2.3.7.js"></script>
         </div>
         <div class="donate">
             <p>我能想到最浪漫的事，就是我喝咖啡你付钱~😆😏</p>
